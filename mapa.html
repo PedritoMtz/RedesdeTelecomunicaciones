@@ -1,0 +1,108 @@
+<!doctype html> 
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>Redes Disponibles</title>
+  <style>
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+
+    #mapa {
+    height: 100%;
+    }
+    
+    @media print {
+    html, body {
+    height: auto;
+    }
+
+    #mapa {
+    height: 650px;
+    }
+}
+  </style>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript">
+    var m;
+    function init() {
+    m = new google.maps.Map(document.getElementById("mapa"));
+    m.setZoom(19);
+    m.setMapTypeId(google.maps.MapTypeId.HYBRID);
+
+    var x = 25.814752 /* 25.741991*/
+    var y = -100.238205/*-100.33389*/
+    var pos = new google.maps.LatLng(x, y); //Coordenada en la que se trazara el circulo
+    m.setCenter(pos);
+    var conf = { //InterCable634710
+    strokeColor: "#BEBEBE", //Gris
+    strokeOpacity: 0.9,
+    strokeWeight: 3,
+    fillColor: "#0000FF",
+    fillOpacity: 0.7,
+    map: m,
+    center: pos,
+    radius: 18
+    };
+    c2 = new google.maps.Circle(conf);
+
+    var conf2 = { //InterCable758049
+    strokeColor: "#FFFFFF", //Blanco
+    strokeOpacity: 0.6,
+    strokeWeight: 3,
+    fillColor: "#00FF00",
+    fillOpacity: 0.4,
+    map: m,
+    center: new google.maps.LatLng(25.814379,-100.238249), //Coordenada en la que se trazara el circulo
+    radius: 18
+    };
+    c2 = new google.maps.Circle(conf2);
+
+    var conf3 = { //InterCable680966
+    strokeColor: "#FF0000", //Rojo
+    strokeOpacity: 0.6,
+    strokeWeight: 3,
+    fillColor: "#006400",
+    fillOpacity: 0.4,
+    map: m,
+    center: new google.maps.LatLng(25.814746,-100.238169), //Coordenada en la que se trazara el circulo
+    radius: 18
+    };
+    c2 = new google.maps.Circle(conf3);
+
+    var conf4 = { //InterCable813975
+    strokeColor: "#FFD700", //Oro
+    strokeOpacity: 0.6,
+    strokeWeight: 3,
+    fillColor: "#00FF7F",
+    fillOpacity: 0.4,
+    map: m,
+    center: new google.maps.LatLng(25.814379,-100.238059), //Coordenada en la que se trazara el circulo
+    radius: 18
+    };
+    c2 = new google.maps.Circle(conf4);
+
+    var conf5 = { //InterCable711243
+    strokeColor: "#FF00FF", //Magenta
+    strokeOpacity: 0.6,
+    strokeWeight: 3,
+    fillColor: "#8FBC8F",
+    fillOpacity: 0.4,
+    map: m,
+    center: new google.maps.LatLng(25.814746,-100.238186), //Coordenada en la que se trazara el circulo
+    radius: 18
+    };
+    c2 = new google.maps.Circle(conf5);
+
+    google.maps.event.addListener(m, "click", function(event) { alert("Hola"); });
+    }
+  </script>
+</head>
+<body onload="init()">
+  <div id="mapa" width="600" height="400"></div>
+</body>
+</html>
+
